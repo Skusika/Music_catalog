@@ -1,0 +1,27 @@
+{% extends "catalog/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Добавить альбом</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    <a href="{% url 'album_list' %}" class="btn btn-outline-secondary btn-sm">Назад к альбомам</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

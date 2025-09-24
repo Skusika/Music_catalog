@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Музыкальная библиотека{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            max-width: 900px;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Музыкальная библиотека</h1>
+        <nav>
+            <a href="{% url 'track_list' %}">🎵 Все треки</a>
+            <a href="{% url 'add_track' %}">➕ Добавить трек</a>
+            <a href="{% url 'add_album' %}">💿 Добавить альбом</a>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        &copy; {{ now|date:"Y" }} Музыкальная библиотека
+    </footer>
+</body>
+</html>
