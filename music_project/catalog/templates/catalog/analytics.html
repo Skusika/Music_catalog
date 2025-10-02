@@ -1,0 +1,19 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Аналитика музыкального каталога</h2>
+
+    <h4 class="mt-4">📊 Количество альбомов у каждого исполнителя</h4>
+    <ul>
+        {% for row in albums_per_artist %}
+            <li>{{ row.artist__name }} — {{ row.title }} альбом(ов)</li>
+        {% endfor %}
+    </ul>
+
+    <h4 class="mt-4">📈 Среднее количество треков в альбоме</h4>
+    <p>{{ avg_tracks_per_album }}</p>
+
+    <h4 class="mt-4">📊 Визуализация</h4>
+    <img src="data:image/png;base64,{{ chart }}" alt="График альбомов">
+</div>
+{% endblock %}

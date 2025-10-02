@@ -8,6 +8,11 @@ class TrackForm(forms.ModelForm):
         fields = ['title', 'album', 'genre']
 
 
+#       widgets = {
+#           'genre': forms.TextInput(attrs={'placeholder': 'например, jazz'}),
+#           'duration': forms.NumberInput(attrs={'min': 1}),
+#       }
+
 class AlbumForm(forms.ModelForm):
     class Meta:
         model = Album

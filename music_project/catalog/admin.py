@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Artist, Album, Track
 
+
 # admin.register(Artist)
 # admin.register(Album)
 # admin.register(Track)
